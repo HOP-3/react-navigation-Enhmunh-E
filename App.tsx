@@ -31,10 +31,9 @@ const App = () => {
 
             if (route.name === 'Home') {
               iconName = focused
-                ? 'ios-information-circle'
-                : 'ios-information-circle-outline';
+                ? 'american-football-outline' : 'american-football';
             } else if (route.name === 'About') {
-              iconName = focused ? 'ios-list-box' : 'ios-list';
+              iconName = focused ? 'aperture-outline' : 'aperture-sharp';
             } else {
               iconName = focused ? 'book-outline' : 'bookmark';
             }
@@ -48,10 +47,10 @@ const App = () => {
       
       >
           <Tab.Screen name="Home" component={HomeScreen} options={{ headerShown: false }}/>
-        <Tab.Screen name="About" component={AboutScreen} options={{ headerShown: false }}/>
-        <Tab.Screen name="ScreenOne" component={ScreenOne} options={{ headerShown: false }}/>
-        <Tab.Screen name="ScreenTwo" component={ScreenTwo} options={{ headerShown: false }}/>
-      </Tab.Navigator>
+            <Tab.Screen name="About" component={AboutScreen} options={{ headerShown: false }}/>
+            <Tab.Screen name="ScreenOne" component={ScreenOne} options={{ headerShown: false }}/>
+            <Tab.Screen name="ScreenTwo" component={ScreenTwo} options={{ headerShown: false }}/>
+          </Tab.Navigator>
       {/* <Stack.Navigator>
         <Stack.Screen name="Home" component={HomeScreen} options={{ headerShown: false }}/>
         <Stack.Screen name="About" component={AboutScreen} />
