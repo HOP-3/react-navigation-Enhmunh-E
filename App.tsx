@@ -15,6 +15,8 @@ import {createNativeStackNavigator} from '@react-navigation/native-stack';
 
 import HomeScreen from './src/screens/Home';
 import AboutScreen from './src/screens/About';
+import ScreenOne from './src/screens/ScreenOne';
+import ScreenTwo from './src/screens/ScreenTwo';
 import {RootStackParamList} from './src/screens/types';
 
 const Stack = createNativeStackNavigator<RootStackParamList>();
@@ -25,6 +27,8 @@ const App = () => {
       <Stack.Navigator>
         <Stack.Screen name="Home" component={HomeScreen} />
         <Stack.Screen name="About" component={AboutScreen} />
+        <Stack.Screen name="ScreenOne" component={ScreenOne} />
+        <Stack.Screen name="ScreenTwo" component={ScreenTwo} />
       </Stack.Navigator>
     </NavigationContainer>
   );

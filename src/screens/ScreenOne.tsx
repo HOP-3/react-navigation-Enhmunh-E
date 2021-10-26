@@ -6,16 +6,16 @@ import Link from '../components/Link';
 
 import {RootStackParamList} from './types';
 
-type Props = NativeStackScreenProps<RootStackParamList, 'About'>;
+type Props = NativeStackScreenProps<RootStackParamList, 'ScreenOne'>;
 
-const About = ({navigation}: Props) => {
+const ScreenOne = ({navigation}: Props) => {
   return (
     <View>
       <Link onPress={() => navigation.navigate('Home')} text="Go to Home" />
-      <Link onPress={() => navigation.navigate('ScreenOne')} text="Go to ScreenOne" />
       <Link onPress={() => navigation.navigate('ScreenTwo')} text="Go to ScreenTwo" />
+      <Link onPress={() => navigation.navigate('About')} text="Go to About" />
     </View>
   );
 };
 
-export default About;
+export default ScreenOne;

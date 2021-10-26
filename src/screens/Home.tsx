@@ -11,6 +11,8 @@ const Home = ({navigation}: Props) => {
   return (
     <View>
       <Link onPress={() => navigation.navigate('About')} text="Go to About" />
+      <Link onPress={() => navigation.navigate('ScreenOne')} text="Go to ScreenOne" />
+      <Link onPress={() => navigation.navigate('ScreenTwo')} text="Go to ScreenTwo" />
     </View>
   );
 };
