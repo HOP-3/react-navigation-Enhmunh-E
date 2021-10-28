@@ -15,20 +15,29 @@ import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
 import HomeScreen from './src/screens/Home';
-import AboutScreen from './src/screens/About';
-import ScreenOne from './src/screens/ScreenOne';
-import ScreenTwo from './src/screens/ScreenTwo';
 import {RootStackParamList} from './src/screens/types';
 import Ionicons from 'react-native-vector-icons/Ionicons';
+import Messenger from './src/screens/Messenger';
+import Details from './src/screens/Details';
+import ListContainer from './src/screens/List';
 const Tab = createBottomTabNavigator<RootStackParamList>();
+const Stack = createNativeStackNavigator<RootStackParamList>();
+const Firebase = () => {
+  return (
+    <Stack.Navigator>
+      <Stack.Screen name="Details" component={Details} />
+
+    </Stack.Navigator>
+  );
+}
 const App = () => {
+
   return (
     <NavigationContainer>
       <Tab.Navigator
         screenOptions={({ route }) => ({
           tabBarIcon: ({ focused, color, size }) => {
             let iconName;
-
             if (route.name === 'Home') {
               iconName = focused
                 ? 'american-football-outline' : 'american-football';
@@ -47,18 +56,12 @@ const App = () => {
       
       >
           <Tab.Screen name="Home" component={HomeScreen} options={{ headerShown: false }}/>
-            <Tab.Screen name="About" component={AboutScreen} options={{ headerShown: false }}/>
-            <Tab.Screen name="ScreenOne" component={ScreenOne} options={{ headerShown: false }}/>
-            <Tab.Screen name="ScreenTwo" component={ScreenTwo} options={{ headerShown: false }}/>
-          </Tab.Navigator>
-      {/* <Stack.Navigator>
-        <Stack.Screen name="Home" component={HomeScreen} options={{ headerShown: false }}/>
-        <Stack.Screen name="About" component={AboutScreen} />
-        <Stack.Screen name="ScreenOne" component={ScreenOne} />
-        <Stack.Screen name="ScreenTwo" component={ScreenTwo} />
-      </Stack.Navigator> */}
+          <Tab.Screen name="ListContainer" component={ListContainer} options={{ headerShown: false }}/>
+          <Tab.Screen name="Messenger" component={Messenger} options={{ headerShown: false }}/>
+          {/* <Tab.Screen name="Firebase" component={Firebase} options={{ headerShown: false }}/> */}
+        </Tab.Navigator>
     </NavigationContainer>
   );
 };
 
-export default App;
+export default App; 
