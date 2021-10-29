@@ -45,15 +45,19 @@ const Messenger = ({navigation}: Props) => {
       backgroundColor: isDarkMode ? Colors.darker : Colors.lighter,
     };
     const flatListRef = useRef<any>(null);
+    const onError = (error:any) => {
+      console.error(error);
+    }
     useEffect(() => {
       let m:message[] = [];
       const subscriber = firestore().collection('messages').orderBy("createdAt", "asc").onSnapshot((snapshot:FirebaseFirestoreTypes.QuerySnapshot) => {
+        console.log("ydj endee orldo ;-;")
         m = [];
         snapshot.forEach((doc: FirebaseFirestoreTypes.DocumentData) => {
           m.push({...doc.data(), id: doc.id});
         });
         setMessages([...m]);
-      });
+      }, onError);
       return () => subscriber();
     }, [])
     return (
