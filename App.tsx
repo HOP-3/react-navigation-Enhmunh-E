@@ -30,6 +30,7 @@ const Firebase = () => {
     </Stack.Navigator>
   );
 }
+//asdf
 const App = () => {
 
   return (
