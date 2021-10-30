@@ -18,10 +18,7 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 import {
   Colors
 } from 'react-native/Libraries/NewAppScreen';
-type doc = {
-  name: string
-  id: string
-}
+
 type message = {
   name: string
   createdAt: object
