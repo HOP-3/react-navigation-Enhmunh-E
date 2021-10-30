@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "723498086784",
+    "project_id": "reactnativetestnest",
+    "storage_bucket": "reactnativetestnest.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:723498086784:android:4a6cedc00890c19cc89165",
+        "android_client_info": {
+          "package_name": "mn.nest.firebaseapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "723498086784-8s5552i3te8kj9l7d007pkn4mkn1mt5e.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCR6mSDmshMhZNirg4McxNdWxFeMThlEJY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "723498086784-8s5552i3te8kj9l7d007pkn4mkn1mt5e.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "723498086784-m93g7r579qau3ubnde90e1h07hnu3ssk.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "mn.nest.firebasetestapp"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

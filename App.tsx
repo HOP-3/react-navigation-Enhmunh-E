@@ -20,16 +20,8 @@ import Ionicons from 'react-native-vector-icons/Ionicons';
 import Messenger from './src/screens/Messenger';
 import Details from './src/screens/Details';
 import ListContainer from './src/screens/List';
+import { SharedContainer } from './src/screens/Shared';
 const Tab = createBottomTabNavigator<RootStackParamList>();
-const Stack = createNativeStackNavigator<RootStackParamList>();
-const Firebase = () => {
-  return (
-    <Stack.Navigator>
-      <Stack.Screen name="Details" component={Details} />
-
-    </Stack.Navigator>
-  );
-}
 const App = () => {
 
   return (
@@ -58,6 +50,7 @@ const App = () => {
           <Tab.Screen name="Home" component={HomeScreen} options={{ headerShown: false }}/>
           <Tab.Screen name="ListContainer" component={ListContainer} options={{ headerShown: false }}/>
           <Tab.Screen name="Messenger" component={Messenger} options={{ headerShown: false }}/>
+          <Tab.Screen name="SharedContainer" component={SharedContainer} options={{ headerShown: false }} />
           {/* <Tab.Screen name="Firebase" component={Firebase} options={{ headerShown: false }}/> */}
         </Tab.Navigator>
     </NavigationContainer>

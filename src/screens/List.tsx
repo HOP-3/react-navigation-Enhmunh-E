@@ -12,7 +12,8 @@ type Props = NativeStackScreenProps<RootStackParamList, 'ListContainer'>;
 const Stack = createNativeStackNavigator<RootStackParamList>();
 
 type list = {
-  age: number
+  age: undefined
+  imageUrl: string
   details: string
   name: string
   id: string

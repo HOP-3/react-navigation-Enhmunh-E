@@ -1,4 +1,4 @@
-package com.rnavigation;
+package mn.nest.firebaseapp;
 
 import com.facebook.react.ReactActivity;
 
