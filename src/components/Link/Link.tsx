@@ -6,7 +6,8 @@ type LinkType = PressableProps & {
   text: string;
 };
 
-const Link = ({onPress, text, ...props}: LinkType) => {
+export const Link = ({onPress, text, ...props}: LinkType) => {
+  // This is the test commits
   return (
     <View>
       <Pressable onPress={onPress} {...props}>

@@ -1,11 +1,10 @@
 import React, { useEffect, useState, useRef } from 'react';
 import {NativeStackScreenProps} from '@react-navigation/native-stack';
 import {FlatList, Pressable, SafeAreaView, Text, View} from 'react-native';
-import firestore, { FirebaseFirestoreTypes, firebase } from '@react-native-firebase/firestore';
+import firestore, { FirebaseFirestoreTypes } from '@react-native-firebase/firestore';
 
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import {RootStackParamList} from './types';
-import { NavigationContainer } from '@react-navigation/native';
 import Details from './Details';
 
 type Props = NativeStackScreenProps<RootStackParamList, 'ListContainer'>;
@@ -32,7 +31,18 @@ const List = ({navigation}: Props) => {
       setList([...m]);
     });
     return () => subscriber();
-  }, [])
+  }, []);
+  useEffect(() => {
+    const unsubscribe = navigation.addListener('focus', () => {
+      // The screen is focused
+      // Call any action
+      console.log(navigation)
+    });
+
+    // Return the function to unsubscribe from the event so it gets removed on unmount
+    return unsubscribe;
+  }, [navigation]);
+
   return (
     <SafeAreaView>
         <FlatList

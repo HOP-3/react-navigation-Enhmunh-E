@@ -8,9 +8,11 @@ const windowHeight = Dimensions.get('window').height;
 import { createSharedElementStackNavigator } from 'react-navigation-shared-element';
 import {RootStackParamList} from './types';
 import ListDetailScreen from './ListDetailScreen';
+import { TransitionPresets } from '@react-navigation/stack';
 type Props = NativeStackScreenProps<RootStackParamList, 'Shared'>;
 type SharedContainerProps = NativeStackScreenProps<RootStackParamList, 'SharedContainer'>;
 const SharedStack = createSharedElementStackNavigator();
+
 type list = {
   age: undefined
   imageUrl: string
@@ -19,18 +21,17 @@ type list = {
   id: string
   onpress: () => void;
 }
+
 const Shared = ({navigation, route}: Props) => {
   const [list, setList] = useState<list[]>([]);
   const flatListRef = useRef<any>(null);
   useEffect(() => {
-    console.log('aa')
     let m:list[] = [];
     firestore().collection('imagelist').get().then((snapshot:FirebaseFirestoreTypes.QuerySnapshot) => {
       m = [];
       snapshot.forEach((doc: FirebaseFirestoreTypes.DocumentData) => {
         m.push({...doc.data(), id: doc.id});
       });
-      console.log(m);
       setList([...m]);
     });
     // return () => subscriber();/

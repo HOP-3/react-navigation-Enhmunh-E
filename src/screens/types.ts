@@ -1,10 +1,8 @@
 export type RootStackParamList = {
   Home: undefined;
-  About: undefined;
-  ScreenOne: undefined;
+  // About: undefined;
   List: undefined;
   Messenger: undefined;
-  Firebase: undefined;
   Shared: undefined;
   Details: { 
     data: {
@@ -24,6 +22,7 @@ export type RootStackParamList = {
       imageUrl: string | undefined
     } 
   };
+  Loading: undefined;
   ListContainer: undefined;
   SharedContainer: undefined;
 };

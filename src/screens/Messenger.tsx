@@ -48,7 +48,6 @@ const Messenger = ({navigation}: Props) => {
     useEffect(() => {
       let m:message[] = [];
       const subscriber = firestore().collection('messages').orderBy("createdAt", "asc").onSnapshot((snapshot:FirebaseFirestoreTypes.QuerySnapshot) => {
-        console.log("ydj endee orldo ;-;")
         m = [];
         snapshot.forEach((doc: FirebaseFirestoreTypes.DocumentData) => {
           m.push({...doc.data(), id: doc.id});
